@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>QuickAnswer Privacy Policy</title>
+  <meta name="description" content="Privacy policy for the QuickAnswer browser extension." />
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #1f2328;
+      --muted: #59636e;
+      --border: #d8dee4;
+      --accent: #2563eb;
+      --soft: #f3f6fb;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #111316;
+        --text: #e6e8eb;
+        --muted: #9aa3ad;
+        --border: #2c3138;
+        --accent: #60a5fa;
+        --soft: #181c21;
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font: 16px/1.65 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    }
+    main { max-width: 720px; margin: 0 auto; padding: 48px 16px 64px; }
+    h1 { font-size: 30px; line-height: 1.2; margin: 0 0 6px; }
+    h2 { font-size: 19px; margin: 36px 0 8px; }
+    p, ul { margin: 0 0 12px; }
+    ul { padding-left: 22px; }
+    li { margin: 4px 0; }
+    a { color: var(--accent); }
+    .meta { color: var(--muted); margin-bottom: 24px; }
+    .summary {
+      background: var(--soft);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px 18px;
+    }
+    .summary p:last-child { margin: 0; }
+    table { width: 100%; border-collapse: collapse; margin: 8px 0 12px; font-size: 15px; }
+    th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--border); vertical-align: top; }
+    th { font-weight: 600; }
+    footer { margin-top: 48px; color: var(--muted); font-size: 14px; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>QuickAnswer Privacy Policy</h1>
+    <p class="meta">Last updated: October 17, 2026</p>
+
+    <div class="summary">
+      <p><strong>In short:</strong> QuickAnswer has no servers of its own. The developer never receives, stores or sees your data. When you ask for an answer, the text you selected goes straight from your browser to the AI service you chose, using your own API key.</p>
+    </div>
+
+    <h2>What QuickAnswer does</h2>
+    <p>QuickAnswer is a browser extension that works on any website. When you select a multiple-choice question and copy it, press the keyboard shortcut, or choose "Get answer" from the right-click menu, it sends that text to an AI service you picked and shows the answer in a small popup on the page.</p>
+
+    <h2>Data the extension handles</h2>
+    <table>
+      <thead>
+        <tr><th>Data</th><th>When</th><th>Where it goes</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Text you select</td>
+          <td>Only when you copy it, press the shortcut, or use the right-click item</td>
+          <td>Sent directly to the AI service you chose. Not stored by the extension.</td>
+        </tr>
+        <tr>
+          <td>Your API key</td>
+          <td>When you paste it into the settings page</td>
+          <td>Stored only in your browser's local extension storage. Sent only to the matching AI service with each request.</td>
+        </tr>
+        <tr>
+          <td>Your settings</td>
+          <td>When you change them</td>
+          <td>Stored only in your browser. Never sent anywhere.</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>To notice when you copy text, the extension checks whether Ctrl+C (or Cmd+C) was pressed. It does not record or store any other keys you press.</p>
+
+    <h2>What QuickAnswer does not do</h2>
+    <ul>
+      <li>It does not send any data to the developer.</li>
+      <li>It does not use analytics, tracking, cookies or ads.</li>
+      <li>It does not read your browsing history or the rest of the page. It only reads the text you select, at the moment you ask.</li>
+      <li>It does not sell, rent or share your data with anyone.</li>
+      <li>It does not use your data for anything except answering the question you selected.</li>
+    </ul>
+
+    <h2>Third-party AI services</h2>
+    <p>You choose which service answers your questions. The text you select and your API key are sent to that service, and its own privacy policy and terms then apply:</p>
+    <ul>
+      <li>Google Gemini: <a href="https://policies.google.com/privacy">Google Privacy Policy</a> and <a href="https://ai.google.dev/gemini-api/terms">Gemini API Terms</a>. On Google's free tier, Google may use what you send to improve its products.</li>
+      <li>Groq: <a href="https://groq.com/privacy-policy/">Groq Privacy Policy</a></li>
+      <li>OpenAI: <a href="https://openai.com/policies/privacy-policy">OpenAI Privacy Policy</a></li>
+      <li>Anthropic (Claude): <a href="https://www.anthropic.com/legal/privacy">Anthropic Privacy Policy</a></li>
+    </ul>
+    <p>If you choose the browser's built-in AI option, where available, the text is processed on your own device and is not sent over the internet.</p>
+
+    <h2>Deleting your data</h2>
+    <p>You can delete your API key at any time by clearing it on the extension's settings page. Removing the extension deletes all of its stored settings and keys from your browser. Since the developer never receives your data, there is nothing held elsewhere to delete.</p>
+
+    <h2>Children</h2>
+    <p>QuickAnswer does not knowingly collect any personal information from anyone, including children.</p>
+
+    <h2>Changes to this policy</h2>
+    <p>If this policy changes, the new version will be posted on this page with a new "Last updated" date.</p>
+
+    <footer>QuickAnswer browser extension</footer>
+  </main>
+</body>
+</html>
