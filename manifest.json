@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "QuickAnswer",
+  "version": "1.0.0",
+  "description": "Copy a multiple-choice question and see the answer in a small popup, using your own AI.",
+  "permissions": ["storage", "offscreen", "contextMenus"],
+  "host_permissions": [
+    "https://generativelanguage.googleapis.com/*",
+    "https://api.groq.com/*",
+    "https://api.openai.com/*",
+    "https://api.anthropic.com/*"
+  ],
+  "background": { "service_worker": "background.js" },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["common.js", "content.js"],
+      "all_frames": true,
+      "run_at": "document_idle"
+    }
+  ],
+  "action": { "default_popup": "popup.html", "default_icon": { "16": "icons/16.png", "48": "icons/48.png" } },
+  "options_page": "options.html",
+  "icons": { "16": "icons/16.png", "48": "icons/48.png", "128": "icons/128.png" },
+  "commands": {
+    "ask-selection": {
+      "suggested_key": { "default": "Alt+Shift+A" },
+      "description": "Answer the selected question"
+    }
+  }
+}
