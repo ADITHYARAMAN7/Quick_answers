@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>QuickAnswer Settings</title>
+    <link rel="stylesheet" href="ui.css" />
+    <style>
+      main { max-width: 680px; margin: 0 auto; padding: 24px 16px 48px; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>QuickAnswer</h1>
+      <p class="muted">Copy a multiple-choice question on any page and the answer pops up in the corner.</p>
+
+      <section class="card">
+        <h2>1. Pick your AI</h2>
+        <div class="providers" id="providers"></div>
+      </section>
+
+      <section class="card" id="keyCard">
+        <h2>2. Paste your key</h2>
+        <div id="keySteps"></div>
+        <label for="key">API key</label>
+        <div class="row">
+          <input type="password" id="key" placeholder="Paste key here" autocomplete="off" style="flex: 1" />
+          <button id="showKey" type="button">Show</button>
+        </div>
+        <p class="muted" style="margin-top: 6px">Your key is stored only in this browser and sent only to the AI company you picked.</p>
+        <details style="margin-top: 8px">
+          <summary class="muted">Advanced: model name</summary>
+          <input type="text" id="model" style="margin-top: 6px" />
+        </details>
+      </section>
+
+      <section class="card" id="builtinCard" hidden>
+        <h2>2. Download the model</h2>
+        <p>Chrome can run a small AI model on your own computer. No key or account needed. It needs desktop Chrome, about 22 GB of free disk space, and a decent GPU or 16 GB of RAM.</p>
+        <p class="muted">It's less accurate than the online options on hard questions.</p>
+        <button id="download" class="primary">Download model</button>
+        <div class="status" id="builtinStatus"></div>
+      </section>
+
+      <section class="card">
+        <h2>3. Test it</h2>
+        <button id="test" class="primary">Run a test question</button>
+        <div class="status" id="testStatus"></div>
+      </section>
+
+      <section class="card">
+        <h2>Options</h2>
+        <label class="check"><input type="checkbox" id="triggerOnCopy" /> Answer automatically when I copy text</label>
+        <label class="check"><input type="checkbox" id="showReason" /> Also show a one-line reason</label>
+        <p class="muted">You can also select text and press <kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>A</kbd>, or right-click and choose "Get answer".</p>
+
+        <label for="position">Popup position</label>
+        <select id="position">
+          <option value="bottom-right">Bottom right</option>
+          <option value="bottom-left">Bottom left</option>
+          <option value="top-right">Top right</option>
+          <option value="top-left">Top left</option>
+        </select>
+
+        <label for="hideAfter">Hide popup after (seconds, 0 = keep until clicked)</label>
+        <input type="number" id="hideAfter" min="0" max="120" />
+
+        <label for="minLength">Ignore copies shorter than (characters)</label>
+        <input type="number" id="minLength" min="0" max="500" />
+
+        <label for="sites">Only run on these sites (one per line, leave empty for all sites)</label>
+        <textarea id="sites" placeholder="aums.amrita.edu"></textarea>
+
+        <div class="status" id="saveStatus"></div>
+      </section>
+    </main>
+    <script src="common.js"></script>
+    <script src="options.js"></script>
+  </body>
+</html>

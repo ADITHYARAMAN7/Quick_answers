@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>QuickAnswer</title>
+    <link rel="stylesheet" href="ui.css" />
+    <style>
+      body { width: 270px; padding: 14px; }
+      .top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+      .top b { font-size: 15px; }
+      .switch { position: relative; width: 38px; height: 22px; }
+      .switch input { opacity: 0; width: 0; height: 0; }
+      .slider { position: absolute; inset: 0; border-radius: 22px; background: var(--border); cursor: pointer; transition: .2s; }
+      .slider::before { content: ""; position: absolute; width: 16px; height: 16px; left: 3px; top: 3px; border-radius: 50%; background: #fff; transition: .2s; }
+      .switch input:checked + .slider { background: var(--accent); }
+      .switch input:checked + .slider::before { transform: translateX(16px); }
+      button { width: 100%; margin-top: 10px; }
+    </style>
+  </head>
+  <body>
+    <div class="top">
+      <b>QuickAnswer</b>
+      <label class="switch" title="Turn on or off"><input type="checkbox" id="enabled" /><span class="slider"></span></label>
+    </div>
+    <p class="muted" id="info"></p>
+    <p class="muted">Copy a question, or select it and press <kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>A</kbd>.</p>
+    <button id="settings">Settings</button>
+    <script src="common.js"></script>
+    <script src="popup.js"></script>
+  </body>
+</html>
